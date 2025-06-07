@@ -98,6 +98,7 @@ Method	Endpoint	Description
 POST	/books	Add a new book (auth required)
 GET	/books	Get all books (with filters)
 GET	/books/:id	Get book details with reviews
+GET /search Get books based on author or name of the book
 
 ✍️ Reviews
 Method	Endpoint	Description
