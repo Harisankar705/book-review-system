@@ -19,5 +19,8 @@ export class BookService implements IBookService{
     {
         return await this.bookRepository.getAverageRating(bookId)
     }
+    async searchBooks(query: string): Promise<IBook[]> {
+  return await this.bookRepository.searchBooks(query);
+    }   
 
 }

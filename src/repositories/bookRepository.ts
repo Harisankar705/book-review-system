@@ -8,6 +8,7 @@ export interface IBookRepository {
   findBooksWithFilters(filters: Partial<IBook>, page: number, limit: number): Promise<{ data: IBook[], total: number }>
   getBookDetails(bookId: string): Promise<IBook | null>
   getAverageRating(bookId: string): Promise<number>
+  searchBooks(query: string): Promise<IBook[]>
 }
 export class BookRepository extends BaseRepository<IBook> implements IBookRepository {
   constructor() {
@@ -35,6 +36,16 @@ export class BookRepository extends BaseRepository<IBook> implements IBookReposi
   }
   async getBookDetails(bookId: string): Promise<IBook | null> {
     return this.model.findById(bookId);
+  }
+
+  async searchBooks(query: string): Promise<IBook[]> {
+  const regex = new RegExp(query, 'i'); 
+  return await Book.find({
+    $or: [
+      { title: { $regex: regex } },
+      { author: { $regex: regex } }
+    ]
+  });
   }
 
   async getAverageRating(bookId: string): Promise<number> {

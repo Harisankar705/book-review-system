@@ -5,6 +5,7 @@ export interface IBookService{
     getBooks(filter:Partial<IBook>,page:number,limit:number):Promise<{data:IBook[],total:number}>
     getBookDetails(id:string):Promise<IBook|null>
     getAverageRating(bookId:string):Promise<number>
+    searchBooks(query: string): Promise<IBook[]>
 }
 export interface IReviewService{
     createReview(data:Partial<IReview>):Promise<IReview|null>

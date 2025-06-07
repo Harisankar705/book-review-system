@@ -25,6 +25,19 @@ export class BookController implements IBookController{
       next(error);
     }
   }
+  async searchBooks(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const query = req.query.q as string;
+    if (!query) {
+      res.status(400).json({ success: false, message: "Query parameter 'q' is required" });
+      return;
+    }
+    const results = await this.bookService.searchBooks(query);
+    res.status(200).json({ success: true, data: results });
+  } catch (error) {
+    next(error);
+  }
+  }
   async getBooks(req: Request, res: Response, next: NextFunction):Promise<void> {
     try {
       

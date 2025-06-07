@@ -1,6 +1,6 @@
 import  jwt, { JwtPayload }  from 'jsonwebtoken';
 import { NextFunction, Request, Response } from "express";
-import { STATUS_CODES } from '@utils/statusCode';
+import { STATUS_CODES } from '../utils/statusCode';
 export function verifyToken(req: Request, res: Response, next: NextFunction) {
     try {
         const authHeader = req.headers.authorization;
