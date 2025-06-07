@@ -1,6 +1,6 @@
 📚 Book Review System
 
-A full-featured Book Review System built with **Node.js**, **Express**, **MongoDB**, and **TypeScript**. Users can sign up, log in, view books, and write reviews. Authenticated users can create, update, or delete their own reviews.
+A full-featured Book Review System built with **Node.js**, **Express**, **MongoDB**, and **TypeScript**. Users can sign up, log in, view books, and write reviews. Authenticated users can create, update, or delete their own reviews.The project is build upon **Repository architecture**
 
 ---
 
@@ -128,8 +128,6 @@ Environment-based configuration
 
  Frontend (React.js) integration
 
-📸 Screenshots
-(Add screenshots of your API response in Postman or UI, if you build frontend)
 
 🧑‍💻 Author
 Harisankar – Self-taught MERN Stack Developer
